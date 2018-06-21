@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,6 +12,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        $this->command->line('▶ Seeding database ...');
+        // we disable the secondary keys verifications
+        Model::unguard();
+        $this->call(UsersTableSeeder::class);
+        $this->call(RestaurantsTableSeeder::class);
+        $this->call(DishesTableSeeder::class);
+        // we enable the secondary keys verifications
+        Model::reguard();
+        $this->command->info('✔ Seed successfull');
     }
 }
