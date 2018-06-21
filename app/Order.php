@@ -13,12 +13,4 @@ class Order extends Model
     {
         return $this->belongsTo('App\User');
     }
-
-    /**
-     * Get the dishes associated with the order.
-     */
-    // public function dishes()
-    // {
-    //     return $this->hasMany('App\Dish');
-    // }
 }
