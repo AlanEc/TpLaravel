@@ -17,8 +17,8 @@ class Order extends Model
     /**
      * Get the dishes associated with the order.
      */
-    public function dishes()
-    {
-        return $this->hasMany('App\Dish');
-    }
+    // public function dishes()
+    // {
+    //     return $this->hasMany('App\Dish');
+    // }
 }
