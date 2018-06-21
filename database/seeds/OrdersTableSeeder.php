@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Faker\Factory as Faker;
 
-class RestaurantsTableSeeder extends Seeder
+class OrdersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,14 +16,9 @@ class RestaurantsTableSeeder extends Seeder
         // ==============================================================================
         // CREATE DUMMY OFFERS FOR TESTING
         // ==============================================================================
-        foreach (range(1, 50) as $index) {
-            DB::table('restaurant')->insert([
-                'name'          => $faker->name,
-                'description'   => $faker->sentence(3),
-                'address'       => $faker->address,
-                'phone_number'  => $faker->e164phoneNumber,
-                'rating'        => $faker->randomDigit,
-                'image'         => $faker->imageUrl(400,200),
+        foreach (range(1, 150) as $index) {
+            DB::table('orders')->insert([
+                'quantity'      => $faker->randomDigit,
                 'created_at'    => $faker->dateTime($max = 'now')
             ]);
         }
