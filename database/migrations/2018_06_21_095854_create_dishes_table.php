@@ -18,13 +18,10 @@ class CreateDishesTable extends Migration
             $table->string('description');
             $table->string('name');
             $table->integer('price');
-            $table->integer('restaurant_id')->unsigned;
+            $table->integer('restaurant_id')->unsigned();
+            $table->foreign('restaurant_id')->references('id')->on('restaurants');
             $table->string('image');
             $table->timestamps();
-        });
-
-        Schema::table('dishes', function($table) {
-            $table->foreign('restaurant_id')->references('id')->on('restaurants');
         });
 
     }
