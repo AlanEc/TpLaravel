@@ -18,7 +18,7 @@ class RestaurantsTableSeeder extends Seeder
         // CREATE DUMMY OFFERS FOR TESTING
         // ==============================================================================
         foreach (range(1, 50) as $index) {
-            DB::table('restaurant')->insert([
+            DB::table('restaurants')->insert([
                 'name'          => $faker->name,
                 'description'   => $faker->sentence(3),
                 'address'       => $faker->address,

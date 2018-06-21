@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
         // CREATE "REAL" USERS FOR DAY TO DAY DEVELOPMENT
         // ==============================================================================
         DB::table('users')->insert([
-            'name'       => 'Antoine MARCHAIS',
+            'name'       => 'Antoine Marchais',
             'email'      => 'antoinemarchais@orange.fr',
             'password'   => bcrypt('password'),
             'created_at' => $faker->dateTime($max = 'now'),
@@ -27,7 +27,7 @@ class UsersTableSeeder extends Seeder
 
         DB::table('users')->insert([
             'name'       => 'Alan Ecalle',
-            'email'      => '?',
+            'email'      => 'alan.ecalle@imie.fr',
             'password'   => bcrypt('password'),
             'created_at' => $faker->dateTime($max = 'now'),
             'updated_at' => $faker->dateTime($max = 'now'),

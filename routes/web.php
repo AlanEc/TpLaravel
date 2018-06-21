@@ -15,15 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('home');
-});
+// Route::get('/home', function () {
+//     return view('home');
+// });
 
-Route::get('/dish/{id}', 'DishController@show');
-Route::get('/order/', 'OrderController@make');
-Route::post('/restaurants/', 'RestaurantController@getList');
-Route::post('/restaurant/{id}', 'RestaurantController@show');
+Route::get('/home', 'DishController@index')->name('home');
+Route::get('/dish/{id}', 'DishController@show')->name('show_dish');
 
+Route::get('/order/', 'OrderController@make')->name('order');
+
+Route::post('/restaurants/', 'RestaurantController@getList')->name('restaurants');
+Route::post('/restaurant/{id}', 'RestaurantController@show')->name('show_restaurants');
 
 // Route::group(['middleware' => ['auth']], function () {
 // 	Route::get('/create/', 'OfferController@create');
