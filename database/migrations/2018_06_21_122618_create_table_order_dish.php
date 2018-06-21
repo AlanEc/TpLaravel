@@ -27,7 +27,7 @@ class CreateTableOrderDish extends Migration
                 ->references('id')
                 ->on('dishes');
             $table->primary(['order_id', 'dish_id']);
-        }
+        });
     }
 
     /**

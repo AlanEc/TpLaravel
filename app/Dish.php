@@ -13,12 +13,4 @@ class Dish extends Model
     {
         return $this->belongsTo('App\Restaurant');
     }
-
-    /**
-     * Get the order that contains the dishes.
-     */
-    // public function order()
-    // {
-    //     return $this->belongsTo('App\Order');
-    // }
 }
