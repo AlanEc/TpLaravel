@@ -18,3 +18,17 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+
+Route::get('/dish/{id}', 'DishController@show');
+Route::get('/order/', 'OrderController@make');
+Route::post('/restaurants/', 'RestaurantController@getList');
+Route::post('/restaurant/{id}', 'RestaurantController@show');
+
+
+// Route::group(['middleware' => ['auth']], function () {
+// 	Route::get('/create/', 'OfferController@create');
+// });
+
+// Auth::routes();
+
+
