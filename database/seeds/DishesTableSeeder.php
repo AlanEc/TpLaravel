@@ -22,7 +22,7 @@ class DishesTableSeeder extends Seeder
                 'name'          => $faker->sentence(3),
                 'description'   => $faker->realText($faker->numberBetween(100, 150)),
                 'price'         => $faker->randomFloat($nbMaxDecimals = 2, $min = 0, $max = 100),
-                'image'         => $faker->imageUrl(400,200),
+                'image'         => $faker->imageUrl(400,200, 'food'),
                 'restaurant_id' => $faker->numberBetween($min = 1, $max = 150),
                 'created_at'    => $faker->dateTime($max = 'now')
             ]);

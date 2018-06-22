@@ -1,23 +1,31 @@
 @extends("layout")
 
-
 @section("content")
-  <!-- <div class="card-columns"> -->
-    <div class="card">
-    
-      <!-- <img class="card-img-top" src="{{$offer->image}}"> -->
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Détail plat</h1>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+
+    <div class="card mb-3">
+      <!-- <img class="card-img-top" src="{{$dish->image}}"> -->
       <div class="card-body">
-        <h4>{{$dish->title}}</h4>
+        <h4>{{$dish->name}}</h4>
         <p class="card-text">{{$dish->description}}</p>
-        <!-- <p class="card-text"><small class="text-muted">{{$offer->username}}</small></p>
-        <p class="card-text"><small class="text-muted">Adresse : {{$offer->address}}</small></p>
-        <p class="card-text"><small class="text-muted">Tél. : {{$offer->phone_number}}</small></p>
-        <p class="card-text"><small class="text-muted">Auteur : {{$offer->author}}</small></p>
-        <p class="card-text"><small class="text-muted">Date de création : {{$offer->created_at}}</small></p> -->
-        <!-- <a href="/offers/{{$offer->id}}" class="btn btn-outline-primary">En savoir plus</a> -->
+        <p class="card-text">Prix : {{$dish->price}} €</p>
       </div>
     </div>
-    <a href="{{ route('home') }}" class="mt-3 btn btn-outline-primary">Retour</a>
-  <!-- </div> -->
 
+    <h4>Restaurant lié</h4>
+    <div class="card">
+      <!-- <img class="card-img-top" src="{{$dish->image}}"> -->
+      <div class="card-body">
+          <h4>{{$restaurant->name}}</h4>
+          <p class="card-text">{{$restaurant->description}}</p>
+          <p class="card-text"><small class="text-muted">Note : {{$restaurant->rating}}/5</small></p>
+          <a href="{{ route('show_restaurant', $restaurant->id) }}" class="btn btn-outline-primary">Détails</a>
+      </div>
+    </div>
+
+    <a href="{{ route('dish') }}" class="mt-3 btn btn-outline-primary">Retour</a>
 @endsection

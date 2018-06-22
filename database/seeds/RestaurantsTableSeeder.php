@@ -23,8 +23,8 @@ class RestaurantsTableSeeder extends Seeder
                 'description'   => $faker->sentence(3),
                 'address'       => $faker->address,
                 'phone_number'  => $faker->e164phoneNumber,
-                'rating'        => $faker->randomDigit,
-                'image'         => $faker->imageUrl(400,200),
+                'rating'        => $faker->numberBetween(0, 5),
+                'image'         => $faker->imageUrl(400,200, 'food'),
                 'created_at'    => $faker->dateTime($max = 'now')
             ]);
         }
