@@ -13,7 +13,7 @@
 
 Route::get('/search', function (Request $request) {
     return App\Dish::search($request->search)->get();
-})->name(search);
+})->name('search');
 
 //--------------------------------------------------------------------------
 // HOME
